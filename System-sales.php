@@ -72,8 +72,9 @@
           <ul class="nav">
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
+                <span class="mdi mdi-account-circle mdi-24px"></span>
                 <div class="nav-profile-text d-flex flex-column">
-                  <span class="font-weight-bold mb-2"><span class="mdi mdi-account-circle mdi-24px"></span><?php echo $_SESSION["name"]; ?></span>
+                  <span class="font-weight-bold mb-2"><?php echo $_SESSION["name"]; ?></span>
                   <span class="text-secondary text-small">Restaurant Manager</span>
                 </div>
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
@@ -94,9 +95,10 @@
               </a>
               <div class="collapse" id="general-pages">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="System-users.php"> System Users </a></li>
-                  <!-- <li class="nav-item"> <a class="nav-link" href="#"> Update records </a></li> -->
-                  <li class="nav-item"> <a class="nav-link" href="register-user.php"> Register new user </a></li>
+                <li class="nav-item"><a class="nav-link" href="System-sales.php">Record Sales</a></li>
+                <li class="nav-item"><a class="nav-link" href="System-purchases.php">Record Purchases</a></li>
+                  <li class="nav-item"><a class="nav-link" href="System-users.php">System Users</a></li>
+                  <li class="nav-item"><a class="nav-link" href="register-user.php">Register new user</a></li>
                 </ul>
               </div>
             </li>
@@ -105,8 +107,8 @@
                 <div class="border-bottom">
                   <h6 class="font-weight-normal mb-3">Recording</h6>
                 </div><br>
-                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-sales.php">Sales </a><br><br>
-                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-purchases.php">Purchase </a><br><br>
+                <!-- <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-sales.php">Sales </a><br><br>
+                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-purchases.php">Purchase </a><br><br> -->
                 <!-- <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="#">New user </a> -->
               
               </span>

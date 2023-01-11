@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
   
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/pagination-table.css">
     <link rel="shortcut icon" href="assets/images/favicon.ico" />
   </head>
   <body>
@@ -45,6 +44,8 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="logout.php">
                   <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
+                  <a class="dropdown-item" href="#">
+                  <i class="mdi mdi-settings me-2 text-primary"></i> Settings </a>
               </div>
             </li>
             
@@ -95,9 +96,10 @@
               </a>
               <div class="collapse" id="general-pages">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="System-users.php"> System Users </a></li>
-                  <!-- <li class="nav-item"> <a class="nav-link" href="#"> Update records </a></li> -->
-                  <li class="nav-item"> <a class="nav-link" href="register-user.php"> Register new user </a></li>
+                <li class="nav-item"><a class="nav-link" href="System-sales.php">Record Sales</a></li>
+                <li class="nav-item"><a class="nav-link" href="System-purchases.php">Record Purchases</a></li>
+                  <li class="nav-item"><a class="nav-link" href="System-users.php">System Users</a></li>
+                  <li class="nav-item"><a class="nav-link" href="register-user.php">Register new user</a></li>
                 </ul>
               </div>
             </li>
@@ -106,8 +108,8 @@
                 <div class="border-bottom">
                   <h6 class="font-weight-normal mb-3">Recording</h6>
                 </div><br>
-                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-sales.php">Sales </a><br><br>
-                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-purchases.php">Purchase </a><br><br>
+                <!-- <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-sales.php">Sales </a><br><br>
+                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-purchases.php">Purchase </a><br><br> -->
                 <!-- <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="#">New user </a> -->
               
               </span>

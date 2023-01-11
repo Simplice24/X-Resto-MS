@@ -94,9 +94,10 @@
               </a>
               <div class="collapse" id="general-pages">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="System-users.php"> System Users </a></li>
-                  <!-- <li class="nav-item"> <a class="nav-link" href="#"> Update records </a></li> -->
-                  <li class="nav-item"> <a class="nav-link" href="register-user.php"> Register new user </a></li>
+                <li class="nav-item"><a class="nav-link" href="System-sales.php">Record Sales</a></li>
+                <li class="nav-item"><a class="nav-link" href="System-purchases.php">Record Purchases</a></li>
+                  <li class="nav-item"><a class="nav-link" href="System-users.php">System Users</a></li>
+                  <li class="nav-item"><a class="nav-link" href="register-user.php">Register new user</a></li>
                 </ul>
               </div>
             </li>
@@ -105,8 +106,8 @@
                 <div class="border-bottom">
                   <h6 class="font-weight-normal mb-3">Recording</h6>
                 </div><br>
-                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-sales.php">Sales </a><br><br>
-                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-purchases.php">Purchase </a><br><br>
+                <!-- <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-sales.php">Sales </a><br><br>
+                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-purchases.php">Purchase </a><br><br> -->
                 <!-- <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="#">New user </a> -->
               
               </span>
