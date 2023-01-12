@@ -37,8 +37,9 @@
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="mdi mdi-account-circle mdi-24px"></span>
                 <div class="nav-profile-text">
-                  <p class="mb-1 text-black"><span class="mdi mdi-account-circle mdi-24px"></span><?php echo $_SESSION["name"];  ?></p>
+                  <p class="mb-1 text-black"><?php echo $_SESSION["name"];  ?></p>
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
@@ -101,17 +102,20 @@
                 </ul>
               </div>
             </li>
-            <li class="nav-item sidebar-actions">
-              <span class="nav-link">
-                <div class="border-bottom">
-                  <h6 class="font-weight-normal mb-3">Recording</h6>
-                </div><br>
-                <!-- <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-sales.php">Sales </a><br><br>
-                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-purchases.php">Purchase </a><br><br> -->
-                <!-- <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="#">New user </a> -->
-              
-              </span>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-title">Settings</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-settings menu-icon"></i>
+              </a>
+              <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="#">Profile</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Security</a></li>
+                </ul>
+              </div>
             </li>
+          </ul>
           </ul>
         </nav>
         <!-- partial -->

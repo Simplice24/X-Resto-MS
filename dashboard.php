@@ -25,7 +25,6 @@
     if($_SESSION["name"])
     ?>
     
-   
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
@@ -36,16 +35,15 @@
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="mdi mdi-account-circle mdi-24px"></span>
                 <div class="nav-profile-text">
-                  <p class="mb-1 text-black"><span class="mdi mdi-account-circle mdi-24px"></span><?php echo $_SESSION["name"];  ?></p>
+                  <p class="mb-1 text-black"><?php echo $_SESSION["name"];  ?></p>
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="logout.php">
                   <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
-                  <a class="dropdown-item" href="#">
-                  <i class="mdi mdi-settings me-2 text-primary"></i> Settings </a>
               </div>
             </li>
             
@@ -103,16 +101,31 @@
                 </ul>
               </div>
             </li>
-            <li class="nav-item sidebar-actions">
+
+            <!-- <li class="nav-item sidebar-actions">
               <span class="nav-link">
                 <div class="border-bottom">
                   <h6 class="font-weight-normal mb-3">Recording</h6>
                 </div><br>
-                <!-- <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-sales.php">Sales </a><br><br>
-                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-purchases.php">Purchase </a><br><br> -->
-                <!-- <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="#">New user </a> -->
+                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-sales.php">Sales </a><br><br>
+                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-purchases.php">Purchase </a><br><br> 
+                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="#">New user </a> 
               
               </span>
+            </li> -->
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-title">Settings</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-settings menu-icon"></i>
+              </a>
+              <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="#">Profile</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Security</a></li>
+                </ul>
+              </div>
             </li>
           </ul>
         </nav>
