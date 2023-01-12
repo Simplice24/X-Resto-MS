@@ -102,17 +102,6 @@
               </div>
             </li>
 
-            <!-- <li class="nav-item sidebar-actions">
-              <span class="nav-link">
-                <div class="border-bottom">
-                  <h6 class="font-weight-normal mb-3">Recording</h6>
-                </div><br>
-                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-sales.php">Sales </a><br><br>
-                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="System-purchases.php">Purchase </a><br><br> 
-                <a class="btn btn-primary btn-lg font-weight-medium auth-form-btn" href="#">New user </a> 
-              
-              </span>
-            </li> -->
 
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
@@ -122,8 +111,8 @@
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="#">Profile</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="#">Security</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="profile.php">Profile</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="settings.php">Security</a></li>
                 </ul>
               </div>
             </li>

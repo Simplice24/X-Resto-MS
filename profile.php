@@ -73,8 +73,9 @@
           <ul class="nav">
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
+              <span class="mdi mdi-account-circle mdi-24px"></span>
                 <div class="nav-profile-text d-flex flex-column">
-                  <span class="font-weight-bold mb-2"><span class="mdi mdi-account-circle mdi-24px"></span><?php echo $_SESSION["name"]; ?></span>
+                  <span class="font-weight-bold mb-2"><?php echo $_SESSION["name"]; ?></span>
                   <span class="text-secondary text-small">Restaurant Manager</span>
                 </div>
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
@@ -110,8 +111,8 @@
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="profile.php">Profile</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="settings.php">Security</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Profile</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Security</a></li>
                 </ul>
               </div>
             </li>
@@ -125,7 +126,7 @@
               <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white me-2">
                   <i class="mdi mdi-home"></i>
-                </span> Dashboard/ Register new user
+                </span> Dashboard/User profile
               </h3>
               <nav aria-label="breadcrumb">
                 <ul class="breadcrumb">
@@ -135,83 +136,86 @@
                 </ul>
               </nav>
             </div>
-    
-            <div class="row">
-    <div class="container-scroller">
-      <!-- <div class="container-fluid page-body-wrapper full-page-wrapper"> -->
-        <div class="content-wrapper d-flex align-items-center auth">
-          <!-- <div class="row flex-grow"> -->
-            <div class="col-lg-4 mx-auto">
-              <div class="auth-form-light text-left p-5">
-                <h4>Register new user</h4>
-                <h6 class="font-weight-light">Fill all input fields. It only takes a few steps</h6>
-                <form class="pt-3" action="" method="POST">
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" name="fullname" placeholder="Full name" required/>
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" name="username" placeholder="User name" required/>
-                  </div>
-                  <div class="form-group">
-                      <select type="text" class="form-control form-control-lg" id="exampleInputUsername1" name="position">
-                      <option>Select position</option>
-                      <option>Super Manager</option>
-                      <option>Restaurant Manager </option>
-                      <option>Employee </option>
-                      </select>
-                  </div>
-                  <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" name="email" placeholder="Email" required/>
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" name="phone" placeholder="Phone" required/>
-                  </div>
-                  <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="password" placeholder="Password" required/>
-                  </div>
-                  <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword2" name="confirm-password" placeholder="Confirm password" required>
-                  </div>
-                  <!-- <div class="mb-4">
-                    <div class="form-check">
-                      <label class="form-check-label text-muted">
-                        <input type="checkbox" name="terms" class="form-check-input" required/> I agree to all Terms & Conditions </label>
+            <?php
+            $profile=$connection->prepare("SELECT * FROM users WHERE id=?");
+            $profile->bind_param('s',$_SESSION["id"]);
+            $profile->execute();
+            $result=$profile->get_result();
+            $row=$result->fetch_assoc();
+            ?>
+           
+            <div class="container">
+           <div class="main-body">
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4><?php echo $row["username"] ?></h4>
+                      <p class="text-secondary mb-1"><?php echo $row["position"]; ?></p>
+                      <p class="text-muted font-size-sm">Contact: <?php echo $row["phone"]; ?></p>
                     </div>
-                  </div> -->
-                  <div class="mt-3">
-                  <button type="submit" name="submit" class="btn btn-block btn-lg btn-gradient-primary mt-4">Register</button>
                   </div>
-                </form>
-                <?php
-   if(isset($_POST["submit"])){
-      $fullname=$_POST["fullname"];
-	    $username = $_POST['username'];
-      $position=$_POST["position"];
-		  $email = $_POST['email'];
-      $phone =$_POST["phone"];
-      $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
-		  $conf_pass =$_POST['confirm-password'];
-
-		if(password_verify($conf_pass,$password)){
-      $query= "INSERT INTO users (id,fullname, username, position, email, phone, pass )
-		VALUES ('','$fullname','$username','$position','$email','$phone','$password')";
-		$r = mysqli_query($connection, $query); 
-	    if(!$r){
-			echo "Failed ".mysqli_error($connection);
-		}else{
-			echo "New user is registered ";
-		}
-    }
-    else{
-      echo "Password do not match";
-    }
-  }
-	   ?>
+                </div>
               </div>
             </div>
-          <!-- </div>
-        </div> -->
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <?php echo $row["fullname"]; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Username</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <?php echo $row["username"]; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <?php echo $row["email"]; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Phone</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <?php echo $row["phone"]; ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <a class="btn btn-primary" href="profile-update.php">Edit</a>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+              </div>
             </div>
+          </div>
+        </div>
+    </div>
+
+            
+          
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">

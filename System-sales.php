@@ -111,8 +111,8 @@
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="#">Profile</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="#">Security</a></li>
+                <li class="nav-item"> <a class="nav-link" href="profile.php">Profile</a></li>
+                <li class="nav-item"> <a class="nav-link" href="settings.php">Security</a></li>
                 </ul>
               </div>
             </li>
